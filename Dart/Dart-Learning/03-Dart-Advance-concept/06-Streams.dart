@@ -29,7 +29,8 @@ void main()
   subscription.listen(print);
 
 }
-
+                                      // Stream is used for getting multiple values in future, 
+                                      // while Future is used for getting only one value in future. 
 Stream<int> count()
 {
   return Stream.periodic(
