@@ -1,15 +1,10 @@
 
-
-// ignore_for_file: unused_import, duplicate_import
-
-import 'package:flutter_app_1/Day5.dart';
-
-import 'Day6.dart';
 import 'package:flutter/material.dart';
+import 'File1.dart';
 
 void main()
 {
-    runApp(MyAPP());
+  runApp(MyAPP());
 }
 
 class MyAPP extends StatelessWidget {
@@ -18,11 +13,7 @@ class MyAPP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Day6(),
-        debugShowCheckedModeBanner: true,
+      home: File1() ,
     );
   }
 }
-
-
-

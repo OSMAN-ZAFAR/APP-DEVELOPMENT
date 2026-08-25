@@ -12,8 +12,7 @@ class _Day3State extends State<Day3> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          // Login Bar
+        appBar: AppBar(  // Login Bar
           title: Center(
             child: Text(
               "Login Page",
@@ -56,6 +55,7 @@ class _Day3State extends State<Day3> {
             Padding(    // password input box,
               padding: const EdgeInsets.all(20.0),
               child: TextFormField(
+                obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Enter your password : ',
                   icon: Icon(
@@ -80,8 +80,7 @@ class _Day3State extends State<Day3> {
 
             SizedBox(height: 25),
 
-            ElevatedButton(
-              // login button,
+            ElevatedButton(  // login button,
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 102, 26, 18),
