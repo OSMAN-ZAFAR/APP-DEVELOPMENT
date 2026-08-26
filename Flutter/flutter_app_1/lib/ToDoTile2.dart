@@ -4,15 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'MyText.dart';
 
-class Todotile extends StatelessWidget {
-  Todotile({
+class Todotile2 extends StatelessWidget {
+  Todotile2({
+    
     super.key,
+    required this.onDelete,
     required this.value,
     required this.onChanged,
     required this.text,
   });
 
-
+VoidCallback onDelete;
   bool value;
   String text;
 
@@ -29,8 +31,8 @@ class Todotile extends StatelessWidget {
           Expanded(  // delete container
             child: GestureDetector(
               onTap: () {
+                onDelete();
                 
-                print('Working prefectly!');
               },
               child: Container(
                

@@ -17,29 +17,34 @@ class _File1State extends State<File1> {
     TextEditingController _controller=TextEditingController();
 
 
-   
-  void onchanged(int index) {
-    // check box function.......
-    setState(() {
-      Notes[index][1] = !Notes[index][1];
-    });
-  }
-
-  
-
   List Notes = [
     ['I will complete the Day7 Task of my Internship.', false],
     
   ];
 
-  onAdd()
+
+  void onchanged(int index) {  // check box function.......
+    
+    setState(() {
+      Notes[index][1] = !Notes[index][1];
+    });
+  }
+
+  onAdd()  // Add Function.....
   {
     setState(() {
       Notes.add([_controller.text.toString(),false]);
     });
 
   }
-
+  
+  onDelete(int index)
+  {
+    setState(() {
+    Notes.removeAt(index);
+      
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -57,6 +62,8 @@ class _File1State extends State<File1> {
           backgroundColor: const Color.fromARGB(255, 86, 24, 19),
           child: Icon(Icons.add, color: Colors.amber),
         ),
+        
+        
         appBar: AppBar(
           title: Center(
             child: Text(
@@ -73,7 +80,10 @@ class _File1State extends State<File1> {
         body: ListView.builder(
           itemCount: Notes.length,
           itemBuilder: (context, index) {
-            return Todotile(
+            return Todotile(    //To-Do-Tile......
+              onDelete: () {
+                onDelete(index);
+              },
               value: Notes[index][1],
               onchanged: (p0) {
                 onchanged(index);
