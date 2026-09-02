@@ -38,7 +38,7 @@ class _File1State extends State<File1> {
 
   }
   
-  onDelete(int index)
+  onDelete(int index)  // delete function
   {
     setState(() {
     Notes.removeAt(index);
