@@ -2,15 +2,23 @@
 
 import 'package:coffee_shop_app/03_Details_View_Page/beanpage.dart';
 import 'package:coffee_shop_app/03_Details_View_Page/bottomHalfBeanPage.dart';
-import 'package:coffee_shop_app/02_Home_Page/homepage.dart';
+import 'package:coffee_shop_app/03_Home_Page/homepage.dart';
 import 'package:coffee_shop_app/04_Cart_Page/cartpage.dart';
 import 'package:coffee_shop_app/widgets/BoldText.dart';
 import 'package:coffee_shop_app/widgets/LightText.dart';
 import 'package:flutter/material.dart';
 
 class Paymentpage extends StatelessWidget {
-  const Paymentpage({super.key});
+   Paymentpage({super.key});
 
+  void pay(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (context) {
+      return AlertDialog();
+    },
+  );
+}
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -266,6 +274,7 @@ class Paymentpage extends StatelessWidget {
                   // pay button........
                   GestureDetector(
                     onTap: () {
+                      pay(context);
                       Navigator.pop(context);
                     },
                     child: Padding(

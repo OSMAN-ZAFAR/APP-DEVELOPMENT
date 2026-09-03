@@ -2,7 +2,7 @@
 
 import 'package:coffee_shop_app/03_Details_View_Page/beanpage.dart';
 import 'package:coffee_shop_app/03_Details_View_Page/bottomHalfBeanPage.dart';
-import 'package:coffee_shop_app/02_Home_Page/homepage.dart';
+import 'package:coffee_shop_app/03_Home_Page/homepage.dart';
 import 'container_1.dart';
 import 'container_2.dart';
 import 'container_3.dart';

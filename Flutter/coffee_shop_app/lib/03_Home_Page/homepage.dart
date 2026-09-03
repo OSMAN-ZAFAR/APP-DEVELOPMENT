@@ -1,6 +1,6 @@
 // ignore_for_file: sized_box_for_whitespace, sort_child_properties_last, avoid_unnecessary_containers, must_be_immutable, unused_import
 
-import 'package:coffee_shop_app/02_Home_Page/coffeeTiles2.dart';
+import 'package:coffee_shop_app/03_Home_Page/coffeeTiles2.dart';
 import 'package:coffee_shop_app/04_Cart_Page/cartpage.dart';
 import 'package:coffee_shop_app/widgets/BoldText.dart';
 import 'package:coffee_shop_app/widgets/LightText.dart';

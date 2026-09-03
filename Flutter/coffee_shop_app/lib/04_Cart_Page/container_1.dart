@@ -2,7 +2,7 @@
 
 import 'package:coffee_shop_app/03_Details_View_Page/beanpage.dart';
 import 'package:coffee_shop_app/03_Details_View_Page/bottomHalfBeanPage.dart';
-import 'package:coffee_shop_app/02_Home_Page/homepage.dart';
+import 'package:coffee_shop_app/03_Home_Page/homepage.dart';
 import 'package:coffee_shop_app/05_Payment_Page/paymentpage.dart';
 import 'package:coffee_shop_app/widgets/BoldText.dart';
 import 'package:coffee_shop_app/widgets/LightText.dart';
