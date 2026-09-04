@@ -2,6 +2,7 @@
 
 import 'package:coffee_shop_app/03_Home_Page/coffeeTiles2.dart';
 import 'package:coffee_shop_app/05_Cart_Page/cartpage.dart';
+import 'package:coffee_shop_app/07-Favorite_Page/favoritepage.dart';
 import 'package:coffee_shop_app/widgets/BoldText.dart';
 import 'package:coffee_shop_app/widgets/LightText.dart';
 import 'drawer.dart';
@@ -30,7 +31,12 @@ class Homepage extends StatelessWidget {
 
         //.................. Bottom Navigation ................................
         bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor:  const Color.fromARGB(125, 60, 111, 162),
+
+
           items: [
+            //............ Home 
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.home_filled,
@@ -39,6 +45,8 @@ class Homepage extends StatelessWidget {
               ),
               label: '',
             ),
+          
+           //............ cart 
             BottomNavigationBarItem(
               icon: GestureDetector(
                 onTap: () {
@@ -55,14 +63,28 @@ class Homepage extends StatelessWidget {
               ),
               label: '',
             ),
+ 
+           //............ favorite 
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.favorite,
-                color: const Color.fromARGB(255, 212, 211, 211),
-                size: 28,
+              icon: GestureDetector(
+                onTap: () {
+                   Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Favoritepage(),
+                              ),
+                            );
+                },
+                child: Icon(
+                  Icons.favorite,
+                  color: const Color.fromARGB(255, 212, 211, 211),
+                  size: 28,
+                ),
               ),
               label: '',
             ),
+
+            //............ Notification 
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.notification_important_rounded,
