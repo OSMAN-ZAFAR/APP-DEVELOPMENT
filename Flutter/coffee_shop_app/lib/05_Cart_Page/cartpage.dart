@@ -1,12 +1,12 @@
 // ignore_for_file: sized_box_for_whitespace, sort_child_properties_last, avoid_unnecessary_containers, must_be_immutable, unused_import
 
-import 'package:coffee_shop_app/03_Details_View_Page/beanpage.dart';
-import 'package:coffee_shop_app/03_Details_View_Page/bottomHalfBeanPage.dart';
+import 'package:coffee_shop_app/04_Details_View_Page/beanpage.dart';
+import 'package:coffee_shop_app/04_Details_View_Page/bottomHalfBeanPage.dart';
 import 'package:coffee_shop_app/03_Home_Page/homepage.dart';
 import 'container_1.dart';
 import 'container_2.dart';
 import 'container_3.dart';
-import 'package:coffee_shop_app/05_Payment_Page/paymentpage.dart';
+import 'package:coffee_shop_app/06_Payment_Page/paymentpage.dart';
 import 'package:coffee_shop_app/widgets/BoldText.dart';
 import 'package:coffee_shop_app/widgets/LightText.dart';
 import 'package:flutter/material.dart';

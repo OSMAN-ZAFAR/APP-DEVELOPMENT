@@ -1,9 +1,10 @@
 // ignore_for_file: sized_box_for_whitespace, sort_child_properties_last, avoid_unnecessary_containers, must_be_immutable, unused_import
 
 import 'package:coffee_shop_app/03_Home_Page/coffeeTiles2.dart';
-import 'package:coffee_shop_app/04_Cart_Page/cartpage.dart';
+import 'package:coffee_shop_app/05_Cart_Page/cartpage.dart';
 import 'package:coffee_shop_app/widgets/BoldText.dart';
 import 'package:coffee_shop_app/widgets/LightText.dart';
+import 'drawer.dart';
 import 'package:flutter/material.dart';
 import 'coffeeTiles.dart';
 
@@ -24,6 +25,10 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        //.................. Drawer  ................................
+        drawer: MyDrawer(),
+
+        //.................. Bottom Navigation ................................
         bottomNavigationBar: BottomNavigationBar(
           items: [
             BottomNavigationBarItem(
@@ -37,10 +42,10 @@ class Homepage extends StatelessWidget {
             BottomNavigationBarItem(
               icon: GestureDetector(
                 onTap: () {
-                   Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Cartpage()),
-                      );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Cartpage()),
+                  );
                 },
                 child: Icon(
                   Icons.shopping_bag,
@@ -68,142 +73,114 @@ class Homepage extends StatelessWidget {
             ),
           ],
         ),
+        
+         //............................. Body .........................
+        body: Builder(
+          builder: (context) {
+            return SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // ☰ Drawer Button
+                  IconButton(
+                    icon: const Icon(Icons.menu_outlined, size: 30,color: Color.fromARGB(244, 230, 170, 5),),
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                  ),
 
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              //.................. Top Row............
-              Padding(
-                padding: EdgeInsetsGeometry.only(top: 20, left: 20),
-                child: Row(
-                  children: [
-                    // Top row app Icon.......
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: const Color.fromARGB(185, 74, 73, 73),
-                      ),
-                      height: 40,
-                      width: 40,
-                      child: Icon(
-                        Icons.apps_outlined,
-                        size: 30,
-                        color: const Color.fromARGB(255, 212, 211, 211),
-                      ),
+                  // Your existing content starts here
+                  SizedBox(height: 30),
+
+                  //............................. text .........................
+                  Padding(
+                    padding: EdgeInsets.only(left: 30),
+                    child: BoldText(
+                      text: 'Find The Best Coffee \n \t\t\t\t\t\t For You...',
+                      color: const Color.fromARGB(255, 212, 211, 211),
+                      size: 32,
                     ),
+                  ),
 
-                    SizedBox(width: 280),
+                  SizedBox(height: 20),
 
-                    // Top row image.......
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: const Color.fromARGB(185, 74, 73, 73),
-                        image: DecorationImage(
-                          image: AssetImage('assets/mypic.png'),
-                          fit: BoxFit.cover,
+                  //........................... search bar .............................
+                  Container(
+                    height: 50,
+                    width: 390,
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(125, 60, 111, 162),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Icon(
+                            Icons.search,
+                            size: 30,
+                            color: const Color.fromARGB(255, 212, 211, 211),
+                          ),
                         ),
-                      ),
-                      height: 40,
-                      width: 40,
-                    ),
-                  ],
-                ),
-              ),
 
-              SizedBox(height: 30),
+                        SizedBox(width: 20),
 
-              // text......
-              Padding(
-                padding: EdgeInsetsGeometry.only(left: 30),
-                child: BoldText(
-                  text: 'Find The Best Coffee \n \t\t\t\t\t\t For You...',
-                  color: const Color.fromARGB(255, 212, 211, 211),
-                  size: 32,
-                ),
-              ),
-
-              SizedBox(height: 20),
-
-              //search bar.......
-              Container(
-                height: 50,
-                width: 390,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(125, 60, 111, 162),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsGeometry.only(left: 20),
-                      // Search Icon.......
-                      child: Icon(
-                        Icons.search,
-                        size: 30,
-                        color: const Color.fromARGB(255, 212, 211, 211),
-                      ),
-                    ),
-
-                    SizedBox(width: 20),
-                    Expanded(
-                      // Text form field........
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: "Find Your Coffee...",
+                        Expanded(
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Find Your Coffee...",
+                            ),
+                          ),
                         ),
-                      ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+
+                  SizedBox(height: 20),
+
+                  //......................... List of coffee Names ......................
+                  Container(
+                    height: 80,
+                    width: double.maxFinite,
+                    color: const Color.fromARGB(255, 21, 21, 21),
+
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: coffeeNames.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          margin: EdgeInsets.only(right: 30),
+                          height: 15,
+                          width: 104,
+                          child: LightText(
+                            text: coffeeNames[index],
+                            color: index == 0
+                                ? const Color.fromARGB(255, 241, 163, 99)
+                                : const Color.fromARGB(255, 212, 211, 211),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+
+                  Coffeetiles(),
+
+                  SizedBox(height: 15),
+
+                  BoldText(
+                    text: "Special for you",
+                    size: 20,
+                    color: const Color.fromARGB(255, 212, 211, 211),
+                  ),
+
+                  SizedBox(height: 15),
+
+                  Coffeetiles2(),
+                ],
               ),
-
-              SizedBox(height: 20),
-
-              // List of  coffee Names......
-              Container(
-                height: 80,
-                width: double.maxFinite,
-                color: const Color.fromARGB(255, 21, 21, 21),
-                // list-view-builder.....
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: coffeeNames.length,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      margin: EdgeInsets.only(right: 30),
-                      height: 15,
-                      width: 104,
-
-                      child: LightText(
-                        text: coffeeNames[index],
-                        color: index == 0
-                            ? const Color.fromARGB(255, 241, 163, 99)
-                            : const Color.fromARGB(255, 212, 211, 211),
-                      ),
-                    );
-                  },
-                ),
-              ),
-
-              Coffeetiles(),
-
-              SizedBox(height: 15),
-
-              BoldText(
-                text: "Special for you",
-                size: 20,
-                color: const Color.fromARGB(255, 212, 211, 211),
-              ),
-
-              SizedBox(height: 15),
-
-              Coffeetiles2(),
-            ],
-          ),
+            );
+          },
         ),
       ),
     );
