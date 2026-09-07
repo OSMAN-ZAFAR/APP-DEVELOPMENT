@@ -15,6 +15,16 @@ class Favoritepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: Padding(
+            padding: const EdgeInsets.only(left: 110),
+            child: Text("Favorite"),
+          ),
+
+         
+          
+          iconTheme: const IconThemeData(color: Colors.orange),
+        ),
         //.................. Bottom Navigation ................................
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
@@ -93,30 +103,31 @@ class Favoritepage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // .............. Back ARRow ..............
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Homepage()),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(218, 60, 111, 162),
+                //   GestureDetector(
+                //     onTap: () {
+                //       Navigator.push(
+                //         context,
+                //         MaterialPageRoute(builder: (context) => Homepage()),
+                //       );
+                //     },
+                //     child: Padding(
+                //       padding: const EdgeInsets.all(16.0),
+                //       child: Container(
+                //         decoration: BoxDecoration(
+                //           color: const Color.fromARGB(218, 60, 111, 162),
 
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Icon(
-                        Icons.arrow_back_ios_new,
-                        color: const Color.fromARGB(255, 239, 183, 100),
-                      ),
-                      height: 40,
-                      width: 40,
-                    ),
-                  ),
-                ),
+                //           borderRadius: BorderRadius.circular(10),
+                //         ),
+                //         child: Icon(
+                //           Icons.arrow_back_ios_new,
+                //           color: const Color.fromARGB(255, 239, 183, 100),
+                //         ),
+                //         height: 40,
+                //         width: 40,
+                //       ),
+                //     ),
+                //   ),
+                //
               ],
             ),
           ],

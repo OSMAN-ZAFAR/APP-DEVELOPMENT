@@ -1,14 +1,24 @@
-// ignore_for_file: sized_box_for_whitespace, sort_child_properties_last, avoid_unnecessary_containers, must_be_immutable, unused_import
+// ignore_for_file: prefer_const_constructors_in_immutables, sized_box_for_whitespace, sort_child_properties_last, avoid_unnecessary_containers, must_be_immutable, unused_import
 
 import 'package:coffee_shop_app/04_Details_View_Page/beanpage.dart';
 import 'package:coffee_shop_app/04_Details_View_Page/bottomHalfBeanPage.dart';
 import 'package:coffee_shop_app/03_Home_Page/homepage.dart';
 import 'package:coffee_shop_app/widgets/BoldText.dart';
 import 'package:coffee_shop_app/widgets/LightText.dart';
+import 'package:coffee_shop_app/Models/coffee.dart';
 import 'package:flutter/material.dart';
 
-class Beanpage extends StatelessWidget {
-  const Beanpage({super.key});
+class Beanpage extends StatefulWidget {
+  Beanpage({super.key, required this.coffee});
+
+  final Coffee coffee;
+
+  @override
+  State<Beanpage> createState() => _BeanpageState();
+}
+
+class _BeanpageState extends State<Beanpage> {
+  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +33,7 @@ class Beanpage extends StatelessWidget {
                   decoration: BoxDecoration(
                     // .............. Bean  Image ..............
                     image: DecorationImage(
-                      image: AssetImage('assets/beans.jpg'),
+                      image: AssetImage(widget.coffee.image),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -62,20 +72,30 @@ class Beanpage extends StatelessWidget {
                         ),
 
                         // .............. Heart ..............
-                        Container(
-                          margin: EdgeInsets.only(right: 20),
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(218, 60, 111, 162),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isFavorite = !isFavorite;
+                            });
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(right: 20),
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(218, 60, 111, 162),
 
-                            borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Icon(
+                              isFavorite
+                                  ? Icons.favorite
+                                  : Icons.favorite_border,
+                              color: isFavorite
+                                  ? const Color.fromARGB(255, 237, 174, 72)
+                                  : const Color.fromARGB(255, 212, 211, 211),
+                            ),
+                            height: 40,
+                            width: 40,
                           ),
-                          child: Icon(
-                            Icons.favorite,
-
-                            color: const Color.fromARGB(255, 237, 174, 72),
-                          ),
-                          height: 40,
-                          width: 40,
                         ),
                       ],
                     ),
@@ -106,7 +126,7 @@ class Beanpage extends StatelessWidget {
                             children: [
                               // Text..........
                               BoldText(
-                                text: "Robusta Beans",
+                                text: widget.coffee.name,
                                 color: Colors.white,
                                 size: 25,
                               ),
@@ -117,7 +137,12 @@ class Beanpage extends StatelessWidget {
                               Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: const Color.fromARGB(125, 60, 111, 162),
+                                  color: const Color.fromARGB(
+                                    125,
+                                    60,
+                                    111,
+                                    162,
+                                  ),
                                 ),
                                 height: 70,
                                 width: 60,
@@ -131,7 +156,12 @@ class Beanpage extends StatelessWidget {
                                     ),
                                     LightText(
                                       text: "Cup",
-                                      color:const Color.fromARGB(255, 212, 211, 211),
+                                      color: const Color.fromARGB(
+                                        255,
+                                        212,
+                                        211,
+                                        211,
+                                      ),
                                       size: 15,
                                     ),
                                   ],
@@ -145,8 +175,12 @@ class Beanpage extends StatelessWidget {
                                 // location.......
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: const Color.fromARGB(125, 60, 111, 162),
-
+                                  color: const Color.fromARGB(
+                                    125,
+                                    60,
+                                    111,
+                                    162,
+                                  ),
                                 ),
                                 height: 70,
                                 width: 60,
@@ -161,7 +195,12 @@ class Beanpage extends StatelessWidget {
                                     ),
                                     LightText(
                                       text: "Africa",
-                                      color: const Color.fromARGB(255, 212, 211, 211),
+                                      color: const Color.fromARGB(
+                                        255,
+                                        212,
+                                        211,
+                                        211,
+                                      ),
                                       size: 15,
                                     ),
                                   ],
@@ -183,7 +222,7 @@ class Beanpage extends StatelessWidget {
                               ),
                               SizedBox(width: 5),
 
-                              BoldText(text: "4.5", size: 20),
+                              BoldText(text:widget.coffee.rating.toString(), size: 20),
 
                               SizedBox(width: 10),
 
@@ -195,13 +234,27 @@ class Beanpage extends StatelessWidget {
                               SizedBox(width: 90),
 
                               Container(
-                                
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color:                                   const Color.fromARGB(125, 60, 111, 162),
-
+                                  color: const Color.fromARGB(
+                                    125,
+                                    60,
+                                    111,
+                                    162,
+                                  ),
                                 ),
-                                child: Center(child: LightText(text: "Medium Roasted",color: const Color.fromARGB(255, 212, 211, 211),size: 15,)),
+                                child: Center(
+                                  child: LightText(
+                                    text: "Medium Roasted",
+                                    color: const Color.fromARGB(
+                                      255,
+                                      212,
+                                      211,
+                                      211,
+                                    ),
+                                    size: 15,
+                                  ),
+                                ),
                                 height: 50,
                                 width: 170,
                               ),
@@ -212,10 +265,8 @@ class Beanpage extends StatelessWidget {
                     ),
                   ),
                 ),
-                
+
                 Bottomhalfbeanpage(),
-              
-              
               ],
             ),
           ],

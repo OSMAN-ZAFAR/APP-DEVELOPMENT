@@ -1,39 +1,38 @@
-// ignore_for_file: sized_box_for_whitespace, sort_child_properties_last, avoid_unnecessary_containers, must_be_immutable, unused_import
+// ignore_for_file: prefer_const_constructors_in_immutables, sized_box_for_whitespace, sort_child_properties_last, avoid_unnecessary_containers, must_be_immutable, unused_import
 
 import 'package:coffee_shop_app/04_Details_View_Page/beanpage.dart';
+import 'package:coffee_shop_app/Data/bean_data.dart';
 import 'package:coffee_shop_app/widgets/BoldText.dart';
 import 'package:coffee_shop_app/widgets/LightText.dart';
+import 'package:coffee_shop_app/Models/bean.dart';
+import 'package:coffee_shop_app/Data/coffee_data.dart';
+
 import 'package:flutter/material.dart';
 
 class Coffeetiles2 extends StatelessWidget {
   Coffeetiles2({super.key});
 
-  List coffeeNames = [
-    "Cappuccino",
-    "Espresso",
-    "Latte",
-    "Flat White",
-    "Americano",
-    "Macchiato",
-    "Cortado",
-  ];
 
   @override
   Widget build(BuildContext context) {
-    return // List of  coffee containers......
+    return // List of  bean containers......
     Container(
       height: 270,
       width: double.maxFinite,
       child: ListView.builder(
         scrollDirection: Axis.vertical,
-        itemCount: coffeeNames.length,
+        itemCount: beans.length,
         itemBuilder: (context, index) {
           return Expanded(
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Beanpage()),
+                MaterialPageRoute(
+                builder: (context) => Beanpage(
+                coffee: beans[index],
+                       ),
+                 ),
                 );
               },
               child: Container(
@@ -59,7 +58,7 @@ class Coffeetiles2 extends StatelessWidget {
                               borderRadius: BorderRadius.circular(15),
 
                               image: DecorationImage(
-                                image: AssetImage('assets/beans.jpg'),
+                                image: AssetImage(Widget.),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -80,7 +79,7 @@ class Coffeetiles2 extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 160),
                             child: BoldText(
-                              text: coffeeNames[index],
+                              text:coffees[index].name,
                               color: Colors.white,
                             ),
                           ),
