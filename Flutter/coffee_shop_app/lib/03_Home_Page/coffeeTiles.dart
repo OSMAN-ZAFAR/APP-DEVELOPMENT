@@ -9,8 +9,6 @@ import 'package:flutter/material.dart';
 class Coffeetiles extends StatelessWidget {
   Coffeetiles({super.key});
 
-  
-
   @override
   Widget build(BuildContext context) {
     return // List of  coffee containers......
@@ -24,19 +22,24 @@ class Coffeetiles extends StatelessWidget {
           return Expanded(
             child: GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder:(context)=>Beanpage(coffee: coffees[index])));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Beanpage(coffee: coffees[index]),
+                  ),
+                );
               },
               child: Container(
                 decoration: BoxDecoration(
                   // main container.......
                   color: const Color.fromARGB(125, 60, 111, 162),
-              
+
                   borderRadius: BorderRadius.circular(15),
                 ),
                 margin: EdgeInsets.only(right: 25),
                 height: 270,
                 width: 200,
-              
+
                 child: Stack(
                   // First stack........
                   children: [
@@ -48,7 +51,7 @@ class Coffeetiles extends StatelessWidget {
                           Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
-              
+
                               image: DecorationImage(
                                 image: AssetImage(coffees[index].image),
                                 fit: BoxFit.cover,
@@ -57,7 +60,7 @@ class Coffeetiles extends StatelessWidget {
                             height: 150,
                             width: 190,
                           ),
-              
+
                           // ranking container.....
                           Container(
                             child: Row(
@@ -75,9 +78,9 @@ class Coffeetiles extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-              
+
                                 SizedBox(width: 5),
-              
+
                                 // Ranking text......
                                 LightText(
                                   text: coffees[index].rating.toString(),
@@ -86,20 +89,20 @@ class Coffeetiles extends StatelessWidget {
                                 ),
                               ],
                             ),
-              
+
                             margin: EdgeInsets.only(left: 100),
                             height: 28,
                             width: 75,
                             decoration: BoxDecoration(
                               color: const Color.fromARGB(125, 60, 111, 162),
-              
+
                               borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(15),
                                 bottomLeft: Radius.circular(20),
                               ),
                             ),
                           ),
-              
+
                           // Bold Text.....
                           Padding(
                             padding: const EdgeInsets.only(top: 160),
@@ -117,7 +120,7 @@ class Coffeetiles extends StatelessWidget {
                               size: 15,
                             ),
                           ),
-              
+
                           // Last Row......
                           Container(
                             child: Padding(
@@ -135,12 +138,15 @@ class Coffeetiles extends StatelessWidget {
                                     ),
                                     size: 30,
                                   ),
-              
+
                                   // price text...
-                                  BoldText(text: coffees[index].price.toString(), color: Colors.white),
-              
+                                  BoldText(
+                                    text: coffees[index].price.toString(),
+                                    color: Colors.white,
+                                  ),
+
                                   SizedBox(width: 60),
-              
+
                                   // plus Button...
                                   Container(
                                     child: Icon(Icons.add),

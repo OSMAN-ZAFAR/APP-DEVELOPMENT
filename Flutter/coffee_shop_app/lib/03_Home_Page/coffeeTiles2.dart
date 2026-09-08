@@ -1,10 +1,8 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, sized_box_for_whitespace, sort_child_properties_last, avoid_unnecessary_containers, must_be_immutable, unused_import
 
 import 'package:coffee_shop_app/04_Details_View_Page/beanpage.dart';
-import 'package:coffee_shop_app/Data/bean_data.dart';
 import 'package:coffee_shop_app/widgets/BoldText.dart';
 import 'package:coffee_shop_app/widgets/LightText.dart';
-import 'package:coffee_shop_app/Models/bean.dart';
 import 'package:coffee_shop_app/Data/coffee_data.dart';
 
 import 'package:flutter/material.dart';
@@ -21,7 +19,7 @@ class Coffeetiles2 extends StatelessWidget {
       width: double.maxFinite,
       child: ListView.builder(
         scrollDirection: Axis.vertical,
-        itemCount: beans.length,
+        itemCount: coffees.length,
         itemBuilder: (context, index) {
           return Expanded(
             child: GestureDetector(
@@ -30,7 +28,7 @@ class Coffeetiles2 extends StatelessWidget {
                   context,
                 MaterialPageRoute(
                 builder: (context) => Beanpage(
-                coffee: beans[index],
+                coffee: coffees[index],
                        ),
                  ),
                 );
@@ -58,7 +56,7 @@ class Coffeetiles2 extends StatelessWidget {
                               borderRadius: BorderRadius.circular(15),
 
                               image: DecorationImage(
-                                image: AssetImage(Widget.),
+                                image: AssetImage(coffees[index].image),
                                 fit: BoxFit.cover,
                               ),
                             ),

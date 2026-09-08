@@ -5,6 +5,8 @@ import 'package:coffee_shop_app/05_Cart_Page/cartpage.dart';
 import 'package:coffee_shop_app/03_Home_Page/homepage.dart';
 import 'package:coffee_shop_app/widgets/BoldText.dart';
 import 'package:coffee_shop_app/widgets/LightText.dart';
+import 'package:coffee_shop_app/Models/coffee.dart';
+import 'package:coffee_shop_app/Data/coffee_data.dart';
 import 'package:flutter/material.dart';
 
 class Bottomhalfbeanpage extends StatelessWidget {
@@ -34,8 +36,8 @@ class Bottomhalfbeanpage extends StatelessWidget {
           height: 60,
           width: 480,
           child: LightText(
-            text:
-                "Small green seeds hidden inside bright red coffee cherries\n on tropical trees.",
+            text:"  Coffee is a popular warm drink made from roasted and\n ground seeds of a tropical plant.",
+               
             color: Colors.white,
             size: 14,
           ),

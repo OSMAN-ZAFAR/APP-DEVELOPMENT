@@ -21,7 +21,7 @@ class Intropage extends StatelessWidget {
               decoration: BoxDecoration(
                 // color: Colors.yellow,
                 image: DecorationImage(
-                  image: AssetImage("assets/Intropage.jpg"),
+                  image: AssetImage("assets/intro.jpg"),
                   fit: BoxFit.cover,
                 ),
               ),

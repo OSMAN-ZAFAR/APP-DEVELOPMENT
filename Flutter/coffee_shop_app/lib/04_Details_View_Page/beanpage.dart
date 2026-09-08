@@ -6,6 +6,7 @@ import 'package:coffee_shop_app/03_Home_Page/homepage.dart';
 import 'package:coffee_shop_app/widgets/BoldText.dart';
 import 'package:coffee_shop_app/widgets/LightText.dart';
 import 'package:coffee_shop_app/Models/coffee.dart';
+import 'package:coffee_shop_app/Data/favorite_data.dart';
 import 'package:flutter/material.dart';
 
 class Beanpage extends StatefulWidget {
@@ -76,6 +77,13 @@ class _BeanpageState extends State<Beanpage> {
                           onTap: () {
                             setState(() {
                               isFavorite = !isFavorite;
+                              if(isFavorite){
+                                favoriteCoffees.add(widget.coffee);
+                                
+                              }
+                              else{
+                                favoriteCoffees.remove(widget.coffee);
+                              }
                             });
                           },
                           child: Container(
