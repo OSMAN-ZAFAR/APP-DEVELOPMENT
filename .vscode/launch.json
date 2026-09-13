@@ -1,0 +1,128 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "01_flutter_app_1",
+            "cwd": "Flutter\\01_flutter_app_1",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "01_flutter_app_1 (profile mode)",
+            "cwd": "Flutter\\01_flutter_app_1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "01_flutter_app_1 (release mode)",
+            "cwd": "Flutter\\01_flutter_app_1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "02_to_do_app_2",
+            "cwd": "Flutter\\02_to_do_app_2",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "02_to_do_app_2 (profile mode)",
+            "cwd": "Flutter\\02_to_do_app_2",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "02_to_do_app_2 (release mode)",
+            "cwd": "Flutter\\02_to_do_app_2",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "03_coffee_shop_app",
+            "cwd": "Flutter\\03_coffee_shop_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "03_coffee_shop_app (profile mode)",
+            "cwd": "Flutter\\03_coffee_shop_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "03_coffee_shop_app (release mode)",
+            "cwd": "Flutter\\03_coffee_shop_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "04_mvc_structure_app",
+            "cwd": "Flutter\\04_mvc_structure_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "04_mvc_structure_app (profile mode)",
+            "cwd": "Flutter\\04_mvc_structure_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "04_mvc_structure_app (release mode)",
+            "cwd": "Flutter\\04_mvc_structure_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "basic_crud_app",
+            "cwd": "Flutter\\basic_crud_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "basic_crud_app (profile mode)",
+            "cwd": "Flutter\\basic_crud_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "basic_crud_app (release mode)",
+            "cwd": "Flutter\\basic_crud_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "fruit_shop_app",
+            "cwd": "Flutter\\fruit_shop_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "fruit_shop_app (profile mode)",
+            "cwd": "Flutter\\fruit_shop_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "fruit_shop_app (release mode)",
+            "cwd": "Flutter\\fruit_shop_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
