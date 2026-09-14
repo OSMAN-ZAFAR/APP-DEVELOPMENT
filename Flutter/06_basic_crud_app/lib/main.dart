@@ -1,9 +1,17 @@
-// ignore_for_file: unused_import
+// ignore_for_file: duplicate_import
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:basic_crud_app/Views/homepage.dart';
+import 'package:basic_crud_app/Views/loginpage.dart';
+import 'package:basic_crud_app/Views/signuppage.dart';
+import 'package:basic_crud_app/controllers/auth_controller.dart';
+import 'package:basic_crud_app/routes/app_routes.dart';
+import 'package:basic_crud_app/Views/homepage.dart';
+import 'package:basic_crud_app/Views/loginpage.dart';
+import 'package:basic_crud_app/Views/signuppage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'firebase_options.dart';
 
 void main() async {
@@ -13,9 +21,9 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  FirebaseFirestore.instance;
+  Get.put(AuthController());
 
-  runApp(MyAPP());
+  runApp(const MyAPP());
 }
 
 class MyAPP extends StatelessWidget {
@@ -23,9 +31,27 @@ class MyAPP extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Homepage(),
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+
+      initialRoute: AppRoutes.login,
+
+      getPages: [
+        GetPage(
+          name: AppRoutes.login,
+          page: () => const LoginView(),
+        ),
+
+        GetPage(
+          name: AppRoutes.signup,
+          page: () => const SignupView(),
+        ),
+
+        GetPage(
+          name: AppRoutes.home,
+          page: () => const HomeView(),
+        ),
+      ],
     );
   }
 }
