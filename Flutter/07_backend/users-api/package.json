@@ -1,0 +1,16 @@
+{
+  "name": "users-api",
+  "version": "1.0.0",
+  "description": "A simple Node.js + Express REST API backend (Users CRUD) built to demonstrate how a mobile/Flutter app talks to a backend server.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["express", "rest-api", "nodejs", "flutter-backend"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
